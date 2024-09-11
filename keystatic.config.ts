@@ -2,7 +2,10 @@ import { config, collection, singleton, fields } from '@keystatic/core'
 
 export default config({
   storage: {
-    kind: 'local'
+    kind: 'cloud'
+  },
+  cloud: {
+    project: 'emptyarea/keystatic'
   },
   collections: {
     posts: collection({
@@ -34,7 +37,7 @@ export default config({
           label: '大图',
           directory: './'
         }),
-        content: fields.document({
+        content: fields.mdx({
           label: 'Content',
           formatting: true,
           dividers: true,
